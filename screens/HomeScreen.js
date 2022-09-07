@@ -1,4 +1,4 @@
-import { StatusBar, View } from "react-native";
+import { StatusBar, View, Button } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import React, { useEffect, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
@@ -33,9 +33,9 @@ const HomeScreen = ({ navigation }) => {
   return (
     <SafeAreaView className="bg-white flex-1">
       <View className="flex-1">
-        <StatusBar translucent={true} backgroundColor="#005DB9" />
+        <StatusBar translucent={true} backgroundColor="#00A300" />
         <View
-          className="bg-[#005DB9] rounded-b-xl"
+          className="bg-[#00A300] rounded-b-xl"
           style={{
             shadowColor: "#000",
             shadowOffset: { width: 0, height: 4 },
@@ -46,15 +46,22 @@ const HomeScreen = ({ navigation }) => {
         >
           <Header navigation={navigation} userDetails={userDetails} />
         </View>
-        <View className="flex-1">
+        <View className='justify-center self-center flex-1'>
+          <Button
+            title="View Appointment"
+            color="#f194ff"
+            onPress={() => Alert.alert("Button with adjusted color pressed")}
+          />
+        </View>
+        {/* <View className="flex-1">
           <FAB
-            className="absolute m-12 bottom-0 right-0 rounded-full bg-[#005DB9]"
+            className="absolute m-12 bottom-0 right-0 rounded-full bg-[#00A300]"
             icon="plus"
             color="white"
             variant="surface"
-            //onPress={() => navigation.push("NewSpotScreen")}
+            onPress={() => navigation.push("NewSpotScreen")}
           />
-        </View>
+        </View> */}
       </View>
     </SafeAreaView>
   );
