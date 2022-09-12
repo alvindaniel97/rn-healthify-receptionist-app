@@ -4,6 +4,7 @@ import useAuth from "./hooks/useAuth";
 import LoginScreen from "./screens/LoginScreen";
 import RegistrationScreen from "./screens/RegistrationScreen";
 import DrawerNavigator from "./DrawerNavigator";
+import AddAppointmentScreen from "./screens/AddAppointmentScreen";
 
 const StackNavigator = () => {
   const Stack = createNativeStackNavigator();
@@ -17,6 +18,7 @@ const StackNavigator = () => {
       {user && !registrationBuffer ? (
         <>
           <Stack.Screen name="HomeScreen" component={DrawerNavigator} />
+          <Stack.Screen name="AddAppointmentScreen" component={AddAppointmentScreen} />
           <Stack.Screen name="ProfileScreen" component={DrawerNavigator} />
         </>
       ) : (

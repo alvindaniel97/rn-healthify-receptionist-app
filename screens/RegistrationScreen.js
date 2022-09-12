@@ -25,6 +25,7 @@ const RegistrationScreen = () => {
   const [icNo, setIcNo] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [hospitalName, setHospitalName] = useState("HKL");
   const [selectedImage, setSelectedImage] = useState(null);
   const ref_input_last_name = useRef();
   const ref_input_email = useRef();
@@ -327,6 +328,7 @@ const RegistrationScreen = () => {
                     email,
                     password,
                     selectedImage,
+                    hospitalName,
                     navigation
                   );
                 }

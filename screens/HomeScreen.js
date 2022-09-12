@@ -1,4 +1,4 @@
-import { StatusBar, View, Button } from "react-native";
+import { StatusBar, View, Button, Text } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import React, { useEffect, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
@@ -46,11 +46,16 @@ const HomeScreen = ({ navigation }) => {
         >
           <Header navigation={navigation} userDetails={userDetails} />
         </View>
-        <View className='justify-center self-center flex-1'>
+        <View className='flex-1 justify-center self-center space-y-4'>
           <Button
-            title="View Appointment"
+            title="Add Appointment"
             color="#f194ff"
-            onPress={() => Alert.alert("Button with adjusted color pressed")}
+            onPress={() => navigation.navigate("AddAppointmentScreen")}
+          />
+           <Button
+            title="View Appointments"
+            color="purple"
+            onPress={() => navigation.navigate("AddAppointmentScreen")}
           />
         </View>
         {/* <View className="flex-1">

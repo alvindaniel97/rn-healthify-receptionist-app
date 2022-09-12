@@ -46,6 +46,7 @@ export const AuthProvider = ({ children }) => {
     email,
     password,
     selectedImage,
+    hospitalName,
     navigation
   ) => {
     setRegistrationBuffer(true);
@@ -83,6 +84,7 @@ export const AuthProvider = ({ children }) => {
                       icNo: icNo,
                       email: email,
                       password: password,
+                      hospitalName: hospitalName,
                       profilePicture: url,
                       role: "receptionist",
                       dateCreated: serverTimestamp(),
@@ -114,6 +116,7 @@ export const AuthProvider = ({ children }) => {
             icNo: icNo,
             email: email,
             password: password,
+            hospitalName: hospitalName,
             profilePicture: null,
             role: "receptionist",
             dateCreated: serverTimestamp(),
@@ -127,7 +130,7 @@ export const AuthProvider = ({ children }) => {
                 position: "bottom",
                 bottomOffset: 20,
               });
-              setRegistrationBuffer(false);
+              setRegistrationBuffer();
               navigation.goBack();
             });
           });
